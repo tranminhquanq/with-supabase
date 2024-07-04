@@ -27,10 +27,8 @@ Deno.serve(async (r: Request) => {
           rank,
           rank + 100,
         ).then(transformSuggestions(prefix));
-
-        const limit = 5;
         return new Response(
-          JSON.stringify({ data: suggestions.slice(0, limit) }),
+          JSON.stringify({ data: suggestions }),
           {
             status: 200,
             headers: { ...corsHeaders, "Content-Type": "application/json" },

@@ -40,7 +40,7 @@ const SearchResults: FC<SearchResultsProps> = ({ query, search }) => {
 
   return (
     <ul className="flex flex-col gap-2 p-4">
-      {searchSesults.map((s, idx) => (
+      {searchSesults.slice(0, 10).map((s, idx) => (
         <li
           className="underline cursor-pointer first-letter:uppercase"
           key={idx}
