@@ -1,0 +1,402 @@
+[
+  {
+    "id": "b13d5950-105f-4bd6-850f-b4909ced45f6",
+    "name": "hộp lòng trứng non cháy tỏi"
+  },
+  {
+    "id": "d226fa68-de01-426f-8189-84d4db313519",
+    "name": "hộp chả mực giã tay hạ long"
+  },
+  {
+    "id": "09402377-a3c9-45ee-bccd-91fe1f3404cc",
+    "name": "box bánh cheese"
+  },
+  {
+    "id": "aa79be5f-568f-46c5-9393-5fa83fbe8a2b",
+    "name": "box bánh cheese + double choco"
+  },
+  {
+    "id": "9a30c2b5-0bcf-4902-925e-da5bd02c83d8",
+    "name": "box đầy đủ"
+  },
+  {
+    "id": "e48f1b18-3950-4b9d-be50-2818f724bc2d",
+    "name": "box nhân đôi"
+  },
+  {
+    "id": "aa3f1c88-023c-4496-b11d-a6ea23498382",
+    "name": "box ngon miệng"
+  },
+  {
+    "id": "9652ccf4-567f-4e83-be70-900b51f6ef21",
+    "name": "set basic tea break"
+  },
+  {
+    "id": "b0d4e665-beac-45a4-a87d-7349fc3466d1",
+    "name": "box bento cake"
+  },
+  {
+    "id": "325af79a-ad0f-4bd8-a253-df67c1a22fbd",
+    "name": "hộp ba rọi bò mỹ cuộn măng tây sốt nấm"
+  },
+  {
+    "id": "3011b777-970d-4bf5-b2a2-90ddd6d3de6b",
+    "name": "hộp gỏi bò bóp thấu"
+  },
+  {
+    "id": "547a3ce1-c57e-4593-82c0-9c294c505a53",
+    "name": "hộp gỏi bò nam bộ"
+  },
+  {
+    "id": "d7b188c0-0247-437a-8d63-2a0edade331b",
+    "name": "hộp bánh soft"
+  },
+  {
+    "id": "4e7afecf-c422-4f3c-a8b6-007ae88d632a",
+    "name": "hộp bánh delicious"
+  },
+  {
+    "id": "c7609d53-1032-449e-9786-ffadd4aedc26",
+    "name": "hộp gỏi bò khoai môn"
+  },
+  {
+    "id": "63a9cad6-68a7-46f1-bda0-d65eec8f82cf",
+    "name": "hộp gỏi rau càng cua bò - trứng"
+  },
+  {
+    "id": "9aef9b81-0336-493e-8eb5-bb7622f147a2",
+    "name": "hộp gỏi ngó sen tôm thịt"
+  },
+  {
+    "id": "50c042c5-1c30-4b15-9da1-32194aa37477",
+    "name": "hộp bánh sweet"
+  },
+  {
+    "id": "bc96bfda-52c2-4dcf-896c-057b71d6009c",
+    "name": "hộp bánh yummy"
+  },
+  {
+    "id": "482a1e45-948b-4dc9-adee-ec8579829247",
+    "name": "tropical strawberry cheese (15 cup)"
+  },
+  {
+    "id": "01bbbd83-279f-4ead-9541-e342d365f983",
+    "name": "hộp gỏi củ hủ dừa tôm thịt"
+  },
+  {
+    "id": "d3ba742c-7062-44f3-b533-1672d801b179",
+    "name": "hộp gỏi củ hủ dừa hải sản"
+  },
+  {
+    "id": "48f604f5-3c3c-418f-9c5a-22cb165a9f2b",
+    "name": "set tiệc đa dạng món mặn"
+  },
+  {
+    "id": "2b6aeab7-6f79-40ba-801d-ee2b1193e2e0",
+    "name": "hộp mực rang muối hồng kông"
+  },
+  {
+    "id": "f6afc58a-cea1-4799-ab46-b9c80a506ae7",
+    "name": "hộp mực chiên giòn"
+  },
+  {
+    "id": "8d27fc3b-f964-484f-97da-6dd450b61d00",
+    "name": "hộp fruit tart"
+  },
+  {
+    "id": "dc762b12-712d-4bf1-99d3-45d9a39125bf",
+    "name": "salted caramel cheese (18 cup)"
+  },
+  {
+    "id": "30be6fd5-86b9-4295-9a8c-ae7443189419",
+    "name": "matcha mousse (20 cup)"
+  },
+  {
+    "id": "dedf2271-9348-4548-b5a3-5752653c54f8",
+    "name": "hộp măng tây xào hải sản"
+  },
+  {
+    "id": "bbb83764-2367-4c1b-9699-1b24f038ed83",
+    "name": "hộp măng tây xào bò"
+  },
+  {
+    "id": "83a1cf3a-47c6-4d03-a34a-816714e73ef3",
+    "name": "hộp bún đậu tá lả"
+  },
+  {
+    "id": "bacdf812-fed0-4cea-8873-59530e2379c3",
+    "name": "hộp bún chả hà nội"
+  },
+  {
+    "id": "4c2cdbb5-2a16-4cf7-ac0b-1ad3df0cc066",
+    "name": "hộp bún nem cua bể"
+  },
+  {
+    "id": "e53d2698-5344-4513-92d6-317c22780bc9",
+    "name": "hộp nem chua rán"
+  },
+  {
+    "id": "17d2f5e7-cbfb-4a40-9852-6503bd2ae5b9",
+    "name": "hộp dồi sụn"
+  },
+  {
+    "id": "120f5793-b942-42cc-b1cf-b82b7655e7a8",
+    "name": "hộp chả cốm"
+  },
+  {
+    "id": "37f6eead-4da6-490f-804b-1479fbe881c7",
+    "name": "hộp chả ốc"
+  },
+  {
+    "id": "6e87f42d-5626-40f0-8263-80ce7e51173e",
+    "name": "hộp nem cua bể"
+  },
+  {
+    "id": "28c5c1a1-9fef-45dc-bdfc-0064b455d733",
+    "name": "hộp ếch xào lăn - bánh mì"
+  },
+  {
+    "id": "e90fb82b-9de4-4b95-8a39-b9656a0d7e9b",
+    "name": "hộp ếch rang muối"
+  },
+  {
+    "id": "e7238d2a-acd2-4aed-819d-ffae5a367eb1",
+    "name": "hộp sườn nướng muối ớt"
+  },
+  {
+    "id": "b08c9be9-72bc-4345-8039-301b9662a496",
+    "name": "hộp tôm xóc tỏi"
+  },
+  {
+    "id": "e77e12da-e03b-496f-8c40-dbedb8840be2",
+    "name": "hộp tôm ủ muối"
+  },
+  {
+    "id": "8681bc67-8d45-4b6e-9caf-65f7a5680455",
+    "name": "hộp tart trứng"
+  },
+  {
+    "id": "7074bf57-731b-4c92-ba71-9b5387ed01f9",
+    "name": "hộp chả cua"
+  },
+  {
+    "id": "d3e2ae3c-e4ce-46ae-8c5f-7f1cc2229a9e",
+    "name": "box bento trái dâu"
+  },
+  {
+    "id": "6f1773f7-dbec-4b5c-aa3d-05c4c6816823",
+    "name": "đùi sau serrano cắt lát (serrano ham sliced)"
+  },
+  {
+    "id": "b6868088-36be-4906-b792-bf4d5aa5a3a9",
+    "name": "hộp bánh bông lan trứng muối"
+  },
+  {
+    "id": "dd9ebdf3-2c54-4224-bf3e-0d4a81f87280",
+    "name": "set tiệc cao cấp"
+  },
+  {
+    "id": "5059fccd-0741-4d58-a9ff-c1daa301a46b",
+    "name": "hộp bánh red velvet"
+  },
+  {
+    "id": "d78d72af-a461-47c2-9df9-8b5a608b9488",
+    "name": "hộp bánh fruit tart"
+  },
+  {
+    "id": "5cdb6295-b31e-4d90-9adc-3bdfc4bd6f35",
+    "name": "hộp bánh pate chaud"
+  },
+  {
+    "id": "4499e5b4-8e73-4732-ae11-3cd72aaf245e",
+    "name": "hộp mousse chanh dây"
+  },
+  {
+    "id": "34300640-4c3b-47f4-837f-18b383a1570b",
+    "name": "hộp panacota chanh dây"
+  },
+  {
+    "id": "fe49bbb2-d7c9-485f-8ebf-f1dd0c6d5db3",
+    "name": "hộp tôm chiên lăn bột"
+  },
+  {
+    "id": "cb5063fe-acef-4f88-8a45-00e024c5d41f",
+    "name": "set thuần việt"
+  },
+  {
+    "id": "1679a485-d0b2-4f23-86f2-bbff6925ee95",
+    "name": "set bình dị"
+  },
+  {
+    "id": "40f254bf-363b-49ec-9a46-bca58f76cb6f",
+    "name": "tiramisu (10 cup)"
+  },
+  {
+    "id": "3acec7b5-fd26-4e0c-bade-232db73aac3a",
+    "name": "hộp bánh mousse mix vị"
+  },
+  {
+    "id": "905e32f5-19f7-463e-b434-57859d0d911f",
+    "name": "teabreak set 2"
+  },
+  {
+    "id": "1a71d951-d680-492a-8a6e-2c70f9591c01",
+    "name": "teabreak set 3"
+  },
+  {
+    "id": "74ea98de-f6b2-44ae-a311-bdef9c91a131",
+    "name": "trà sữa olong than tre 900ml"
+  },
+  {
+    "id": "3da2b4ee-f4fe-434e-bf39-6cfe4d3643dd",
+    "name": "bánh phô mai chanh dây (15 hủ)"
+  },
+  {
+    "id": "8d7f5065-9c9a-47ac-a5a6-50f66f6228e5",
+    "name": "set tiệc tiêu chuẩn"
+  },
+  {
+    "id": "833c69d1-0295-4bef-a012-1e6867956306",
+    "name": "hộp croissant jabong"
+  },
+  {
+    "id": "99dd8fdb-dcaa-46bb-9267-7359158250a9",
+    "name": "hộp cánh gà khúc giữa chiên mắm"
+  },
+  {
+    "id": "fe230321-2adb-4f89-9762-0568f7ae56f4",
+    "name": "set basic finger food"
+  },
+  {
+    "id": "08f783ce-5b08-44fe-921d-03f5e2a1f5f5",
+    "name": "set standard finger food"
+  },
+  {
+    "id": "a5b45e80-f84d-4c85-929c-fc8abe03bff7",
+    "name": "hộp cá bớp chiên mắm"
+  },
+  {
+    "id": "d62407a0-be91-461e-96a6-2c0b9d342f1b",
+    "name": "double chocolate (23 cup)"
+  },
+  {
+    "id": "b40f8d45-1356-4139-8b0a-5d9d148e81d9",
+    "name": "đùi sau cebo cắt lát (cebo ham sliced)"
+  },
+  {
+    "id": "8fbfad12-998f-40fe-b2cf-9df7a0fc3dfe",
+    "name": "set premium finger food"
+  },
+  {
+    "id": "f726fb56-47b4-46ca-9777-e72df0ca8770",
+    "name": "set deluxe finger food"
+  },
+  {
+    "id": "5fef7016-1e76-4950-aaca-13657296f4f5",
+    "name": "set standard tea break"
+  },
+  {
+    "id": "a2535f41-c2ba-4c80-9a1c-bb98fd2aa883",
+    "name": "set premium tea break"
+  },
+  {
+    "id": "e66e483f-aa78-4c8f-a93a-c5524750edd0",
+    "name": "set deluxe tea break"
+  },
+  {
+    "id": "7595f66e-6f0d-48f5-97d0-d48b7429a48d",
+    "name": "set tiệc đầy đủ"
+  },
+  {
+    "id": "b018fd06-c316-4e5a-8f9b-6e8d199d8484",
+    "name": "hộp gà ta nguyên con quay - bánh bao"
+  },
+  {
+    "id": "f898992a-ed9f-455a-89b8-d382f3816f49",
+    "name": "set basic tea break"
+  },
+  {
+    "id": "23ca87ab-dafe-44b7-8166-19985090a210",
+    "name": "set tiệc cơ bản"
+  },
+  {
+    "id": "98a87015-9b81-43ad-ac3b-22a6bf4459b8",
+    "name": "set mini tea break"
+  },
+  {
+    "id": "0ef7101d-0e74-49e6-9534-65131f3c8ed0",
+    "name": "hộp mì xào hải sản"
+  },
+  {
+    "id": "e802ea90-3e8e-4061-b3b1-26fd06d96951",
+    "name": "hộp miến xào cua"
+  },
+  {
+    "id": "92cb3354-86a1-4e62-be52-c06657c56a0b",
+    "name": "hộp miến xào hải sản"
+  },
+  {
+    "id": "b72f5141-8c55-4193-91f0-8740a6ceffe8",
+    "name": "hộp miến xào thập cẩm"
+  },
+  {
+    "id": "279fe6d4-5c87-4c63-9132-1d59b78f64e9",
+    "name": "hộp gà tre hầm sâm tươi truyền thống"
+  },
+  {
+    "id": "d4aebbd2-f7e3-47b3-be94-68f3f9f75881",
+    "name": "set truyền thống"
+  },
+  {
+    "id": "b8b8788f-4332-41ee-8d0d-4919dcf5b023",
+    "name": "hộp gà tre hầm sâm bí đỏ, hạt sen"
+  },
+  {
+    "id": "6c155bad-a0a6-4b31-af7a-bb02134ff6ac",
+    "name": "hộp gà tre hầm sâm đương quy"
+  },
+  {
+    "id": "0ab8a40c-4ce9-41f0-a319-49c317dd06fc",
+    "name": "hộp gà tre hầm sâm với đông trùng hạ thảo"
+  },
+  {
+    "id": "ccabef65-867e-4983-aad9-14863cf0b6e5",
+    "name": "hộp cháo bào ngư cốt gà"
+  },
+  {
+    "id": "2b4f93d4-d835-4ab8-bba3-942125a0f4d7",
+    "name": "hộp cháo bào ngư cốt gà với bí đỏ, hạt sen"
+  },
+  {
+    "id": "fa9dd06c-6598-4cd4-afd8-5900e6e46aa7",
+    "name": "hộp chân gà rút xương rang muối"
+  },
+  {
+    "id": "96e0a442-6ff1-484b-b2de-e62aba44a43f",
+    "name": "hộp cháo bào ngư cốt gà với đương quy"
+  },
+  {
+    "id": "dfec892c-894b-4fcc-948b-50675908cb8e",
+    "name": "hộp cháo bào ngư cốt gà với đông trùng hạ thảo"
+  },
+  {
+    "id": "30ce7875-d2bb-4b5f-b676-1ff9917849aa",
+    "name": "teabreak set 1"
+  },
+  {
+    "id": "b7cfb2cb-0f59-4250-b599-d45351b00d65",
+    "name": "hộp cơm chiên dương châu"
+  },
+  {
+    "id": "066eba69-2845-45a9-8982-e3ba730eadf7",
+    "name": "hộp gỏi khoai môn hải sản"
+  },
+  {
+    "id": "19e128a1-a8b2-41f8-be24-5bba8652b99c",
+    "name": "set premium tea break"
+  },
+  {
+    "id": "006947c3-1744-4266-aa5e-f3adfde2ef8c",
+    "name": "set basic tea break"
+  }
+]
