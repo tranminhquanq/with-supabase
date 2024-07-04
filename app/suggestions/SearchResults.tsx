@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from "react";
+import { FunctionRegion } from "@supabase/supabase-js";
 import { VietnameseSearchTrie } from "./helpers";
 
 type SearchResultsProps = {
@@ -21,7 +22,12 @@ const SearchResults: FC<SearchResultsProps> = ({ query, search }) => {
     (async () => {
       try {
         const requestURL = `https://hjlytwgwushifstyclio.supabase.co/functions/v1/suggestions?q=${query}`;
-        const response = await fetch(requestURL, { signal });
+        const response = await fetch(requestURL, {
+          signal,
+          headers: {
+            "x-region": FunctionRegion.ApSoutheast1,
+          },
+        });
         if (!signal.aborted && response.ok) {
           const { data } = await response.json();
           setSearchResults(data);
