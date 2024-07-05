@@ -84,16 +84,14 @@ class Trie {
   }
 }
 
-export class VietnameseSearchTrie {
+export class AutocompleteSearchTrie {
   trie: Trie;
   constructor() {
     this.trie = new Trie();
   }
 
   addWord(word: string) {
-    if (!this.trie.has(word.toLowerCase())) {
-      this.trie.insert(word.toLowerCase());
-    }
+    this.trie.insert(word.toLowerCase());
   }
 
   search(query: string, limit = 10) {

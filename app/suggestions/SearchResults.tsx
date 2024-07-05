@@ -1,13 +1,13 @@
 import { FC, useEffect, useState } from "react";
 import { FunctionRegion } from "@supabase/supabase-js";
-import { VietnameseSearchTrie } from "./helpers";
+import { AutocompleteSearchTrie } from "./helpers";
 
 type SearchResultsProps = {
   query: string;
-  search: VietnameseSearchTrie;
+  searchTrie: AutocompleteSearchTrie;
 };
 
-const SearchResults: FC<SearchResultsProps> = ({ query, search }) => {
+const SearchResults: FC<SearchResultsProps> = ({ query, searchTrie }) => {
   const [searchSesults, setSearchResults] = useState<Array<string>>([]);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const SearchResults: FC<SearchResultsProps> = ({ query, search }) => {
     const signal = abortController.signal;
 
     if (!query) return setSearchResults([]);
-    const resultsInTrie = search.search(query);
+    const resultsInTrie = searchTrie.search(query);
     if (resultsInTrie.length)
       return setSearchResults(resultsInTrie.filter(Boolean) as Array<string>);
 
@@ -41,7 +41,8 @@ const SearchResults: FC<SearchResultsProps> = ({ query, search }) => {
   }, [query]);
 
   useEffect(() => {
-    if (searchSesults.length) searchSesults.forEach((s) => search.addWord(s));
+    if (searchSesults.length)
+      searchSesults.forEach((s) => searchTrie.addWord(s));
   }, [searchSesults]);
 
   return (

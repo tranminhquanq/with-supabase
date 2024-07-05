@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useDeferredValue, Suspense, useMemo } from "react";
-import { VietnameseSearchTrie } from "./helpers";
+import { AutocompleteSearchTrie } from "./helpers";
 import SearchResults from "./SearchResults";
 
 const Autocomplete = () => {
@@ -9,7 +9,7 @@ const Autocomplete = () => {
   const deferredQuery = useDeferredValue(query);
   const isStale = query !== deferredQuery;
 
-  const search = useMemo(() => new VietnameseSearchTrie(), []);
+  const searchTrie = useMemo(() => new AutocompleteSearchTrie(), []);
 
   return (
     <section className="w-1/3">
@@ -28,7 +28,7 @@ const Autocomplete = () => {
               : "opacity 0s 0s linear",
           }}
         >
-          <SearchResults query={query} search={search} />
+          <SearchResults query={query} searchTrie={searchTrie} />
         </div>
       </Suspense>
     </section>
