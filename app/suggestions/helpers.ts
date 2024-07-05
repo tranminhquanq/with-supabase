@@ -37,7 +37,7 @@ class Trie {
 
   has(word: string) {
     let node = this.root;
-    for (let char of word) {
+    for (const char of word) {
       if (!node.children.has(char)) {
         return false;
       }
@@ -48,7 +48,7 @@ class Trie {
 
   insert(word: string) {
     let node = this.root;
-    for (let char of word) {
+    for (const char of word) {
       if (!node.children.has(char)) {
         node.children.set(char, new TrieNode());
       }
@@ -61,7 +61,7 @@ class Trie {
 
   search(prefix: string) {
     let node = this.root;
-    for (let char of prefix) {
+    for (const char of prefix) {
       if (!node.children.has(char)) {
         return [];
       }
@@ -85,7 +85,7 @@ class Trie {
   }
 
   fuzzySearch(query: string, maxDistance = 2) {
-    let results: Array<TrieResult> = [];
+    const results: Array<TrieResult> = [];
     this._traverse(this.root, "", query, maxDistance, results);
     return results;
   }
