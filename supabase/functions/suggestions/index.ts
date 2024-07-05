@@ -25,8 +25,10 @@ Deno.serve(async (r: Request) => {
         const suggestions = await redis.zrange<Array<string>>(
           "suggestions",
           rank,
-          rank + 100,
-        ).then(transformSuggestions(prefix));
+          rank + 100, // 100 it's mean 100 suggestions
+        ).then(transformSuggestions(prefix))
+          .catch(fallbackToDatabase(prefix));
+
         return new Response(
           JSON.stringify({ data: suggestions }),
           {
@@ -52,6 +54,9 @@ Deno.serve(async (r: Request) => {
 
 function transformSuggestions(prefix: string) {
   return (suggestions: Array<string>) => {
+    if (suggestions.length === 0) {
+      throw new Error("No suggestions found. Fallback to database");
+    }
     const result: Array<string> = [];
     for (const s of suggestions) {
       if (!s.startsWith(prefix)) break;
@@ -60,5 +65,17 @@ function transformSuggestions(prefix: string) {
       }
     }
     return result;
+  };
+}
+
+function fallbackToDatabase(_prefix: string) {
+  return (_error: Error): Promise<Array<string>> => {
+    try {
+      // log error here
+      // probably fetch from database
+      return Promise.resolve([]);
+    } catch (_error) {
+      return Promise.resolve([]);
+    }
   };
 }
