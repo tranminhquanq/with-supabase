@@ -1,3 +1,5 @@
+import levenshtein from "js-levenshtein";
+
 type TrieResult = {
   originalWord?: string;
   frequency: number;
@@ -76,11 +78,45 @@ class Trie {
         frequency: node.frequency,
       });
     }
-    for (const char in Object.fromEntries(node.children)) {
-      const child = node.children.get(char)!;
+    node.children.forEach((child) => {
       results = results.concat(this._findAllWords(child));
-    }
+    });
     return results;
+  }
+
+  fuzzySearch(query: string, maxDistance = 2) {
+    let results: Array<TrieResult> = [];
+    this._traverse(this.root, "", query, maxDistance, results);
+    return results;
+  }
+
+  _traverse(
+    node: TrieNode,
+    currentWord: string,
+    query: string,
+    maxDistance: number,
+    results: Array<TrieResult>
+  ) {
+    if (currentWord.length > 0) {
+      const queryWords = query.split(" ");
+      const currentWords = currentWord.split(" ");
+      const minLength = Math.min(queryWords.length, currentWords.length);
+      let partialDistance = 0;
+      for (let i = 0; i < minLength; i++) {
+        partialDistance += levenshtein(queryWords[i], currentWords[i]);
+      }
+
+      // console.log(`Checking word: ${currentWord}, partial distance: ${partialDistance}`);
+      if (partialDistance <= maxDistance && node.isEndOfWord) {
+        results.push({
+          originalWord: node.originalWord,
+          frequency: node.frequency,
+        });
+      }
+    }
+    node.children.forEach((child, char) => {
+      this._traverse(child, currentWord + char, query, maxDistance, results);
+    });
   }
 }
 
@@ -94,9 +130,13 @@ export class AutocompleteSearchTrie {
     this.trie.insert(word.toLowerCase());
   }
 
-  search(query: string, limit = 10) {
-    return this.trie
-      .search(query.toLowerCase())
+  search(query: string, limit = 5) {
+    let result = this.trie.search(query.toLowerCase());
+    if (result.length === 0) {
+      // console.log("Fuzzy search");
+      result = this.trie.fuzzySearch(query.toLowerCase());
+    }
+    return result
       .sort(orderByFrequency)
       .slice(0, limit) // from 0 to limit
       .map((r) => r.originalWord);
