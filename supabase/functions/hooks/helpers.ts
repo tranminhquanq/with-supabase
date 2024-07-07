@@ -8,7 +8,7 @@ export function cleanText(text: string) {
 }
 
 export function generatePrefixes(str: string, size = 8) {
-  const prefixes = []
+  const prefixes = [];
   const maxLength = Math.min(size, str.length);
   for (let i = 2; i <= maxLength; i++) {
     prefixes.push(str.substring(0, i));
