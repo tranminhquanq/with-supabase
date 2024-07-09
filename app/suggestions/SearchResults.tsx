@@ -1,7 +1,5 @@
-import { FC, useCallback, useEffect, useState } from "react";
-// import { FunctionRegion } from "@supabase/supabase-js";
+import { useEffect, useState } from "react";
 import { Redis } from "@upstash/redis";
-import { debounce } from "lodash";
 import { AutocompleteSearchTrie } from "./helpers";
 
 type SearchResultsProps = {
@@ -12,67 +10,33 @@ type SearchResultsProps = {
 const SearchResults = ({ query, searchTrie }: SearchResultsProps) => {
   const [searchSesults, setSearchResults] = useState<Array<string>>([]);
 
-  // const getSuggestions = useCallback(async () => {
-  //   const redis = new Redis({
-  //     url: "https://innocent-coral-35951.upstash.io",
-  //     token: "AYxvAAIncDEwYzEyZDE3YzA0MGE0M2RhYjhjODIyN2ZjODRmMWZhNHAxMzU5NTE",
-  //   });
-  //   const prefix = query.toLowerCase().trim();
-  //   if (prefix && prefix.length > 1) {
-  //     const rank = await redis.zrank("suggestions", prefix);
-  //     if (rank !== null) {
-  //       const suggestions = await redis
-  //         .zrange<Array<string>>("suggestions", rank, rank + 100)
-  //         .then(transformSuggestions(prefix))
-  //         .catch(fallbackToDatabase(prefix));
-  //       return setSearchResults(suggestions);
-  //     }
-  //   }
-  //   setSearchResults([]);
-  // }, [query]);
+  useEffect(() => {
+    if (!query) return setSearchResults([]);
+    const resultsInTrie = searchTrie.search({ query, isFuzzy: true });
+    setSearchResults(resultsInTrie as Array<string>);
+  }, [query]);
 
   useEffect(() => {
+    if (searchSesults.length) return;
+
     const abortController = new AbortController();
     const signal = abortController.signal;
-
-    if (!query) return setSearchResults([]);
-    const resultsInTrie = searchTrie.search(query);
-    if (resultsInTrie.length)
-      return setSearchResults(resultsInTrie.filter(Boolean) as Array<string>);
-
-    // debounce(getSuggestions, 300)();
-    // (async () => {
-    //   try {
-    //     const requestURL = `/api/autocomplete?q=${query}`;
-    //     const response = await fetch(requestURL, {
-    //       signal,
-    //     });
-    //     if (!signal.aborted && response.ok) {
-    //       const { data } = await response.json();
-    //       setSearchResults(data);
-    //     }
-    //   } catch (err) {
-    //     if (!signal.aborted) console.error(err);
-    //   }
-    // })();
-    // return () => abortController.abort();
 
     (async () => {
       try {
         const redis = new Redis({
-          url: "https://innocent-coral-35951.upstash.io",
-          token:
-            "AYxvAAIncDEwYzEyZDE3YzA0MGE0M2RhYjhjODIyN2ZjODRmMWZhNHAxMzU5NTE",
+          url: process.env.NEXT_PUBLIC_UPSTASH_REDIS_REST_URL!,
+          token: process.env.NEXT_PUBLIC_UPSTASH_REDIS_TOKEN!,
           signal,
         });
 
         const prefix = query.toLowerCase().trim();
         if (!signal.aborted) {
           if (prefix.length > 1) {
-            const rank = await redis.zrank("suggestions", prefix);
+            const rank = await redis.zrank("dev:suggestions", prefix);
             if (rank !== null) {
               const suggestions = await redis
-                .zrange<Array<string>>("suggestions", rank, rank + 100)
+                .zrange<Array<string>>("dev:suggestions", rank, rank + 100)
                 .then(transformSuggestions(prefix))
                 .catch(fallbackToDatabase(prefix));
               setSearchResults(suggestions);
@@ -85,16 +49,17 @@ const SearchResults = ({ query, searchTrie }: SearchResultsProps) => {
     })();
 
     return () => abortController.abort();
-  }, [query]);
+  }, [searchSesults, query]);
 
   useEffect(() => {
-    if (searchSesults.length)
+    if (searchSesults.length) {
       searchSesults.forEach((s: string) => searchTrie.addWord(s));
+    }
   }, [searchSesults]);
 
   return (
     <ul className="flex flex-col gap-2 p-4">
-      {searchSesults.slice(0, 10).map((s: string, idx: number) => (
+      {searchSesults.slice(0, 5).map((s: string, idx: number) => (
         <li
           className="underline cursor-pointer first-letter:uppercase"
           key={idx}
@@ -107,36 +72,6 @@ const SearchResults = ({ query, searchTrie }: SearchResultsProps) => {
 };
 
 export default SearchResults;
-
-// async function getSuggestions(query: string) {
-//   const abortController = new AbortController();
-//   const signal = abortController.signal;
-
-//   const redis = new Redis({
-//     url: "https://innocent-coral-35951.upstash.io",
-//     token: "AYxvAAIncDEwYzEyZDE3YzA0MGE0M2RhYjhjODIyN2ZjODRmMWZhNHAxMzU5NTE",
-//   });
-
-//   const prefix = query.toLowerCase().trim();
-
-//   if (prefix && prefix.length > 1) {
-//     // Only search if prefix is at least 2 characters
-//     const rank = await redis.zrank("suggestions", prefix);
-//     if (rank) {
-//       const suggestions = await redis
-//         .zrange<Array<string>>(
-//           "suggestions",
-//           rank,
-//           rank + 100 // 100 it's mean 100 suggestions
-//         )
-//         .then(transformSuggestions(prefix))
-//         .catch(fallbackToDatabase(prefix));
-
-//       return suggestions;
-//     }
-//   }
-//   return [];
-// }
 
 function transformSuggestions(prefix: string) {
   return (suggestions: Array<string>) => {
@@ -157,8 +92,6 @@ function transformSuggestions(prefix: string) {
 function fallbackToDatabase(_prefix: string) {
   return (_error: Error): Promise<Array<string>> => {
     try {
-      // log error here
-      // probably fetch from database
       return Promise.resolve([]);
     } catch (_error) {
       return Promise.resolve([]);

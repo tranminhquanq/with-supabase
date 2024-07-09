@@ -1,6 +1,6 @@
 {
-    "imports": {
-        "edge-runtime": "https://esm.sh/v135/@supabase/functions-js@2.4.1/src/edge-runtime.d.ts",
-        "@upstash/redis": "https://deno.land/x/upstash_redis@v1.19.3/mod.ts"
-    }
+  "imports": {
+    "edge-runtime": "https://esm.sh/v135/@supabase/functions-js@2.4.1/src/edge-runtime.d.ts",
+    "@upstash/redis": "https://deno.land/x/upstash_redis@v1.19.3/mod.ts"
+  }
 }

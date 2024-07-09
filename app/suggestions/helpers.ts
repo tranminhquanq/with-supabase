@@ -5,21 +5,8 @@ type TrieResult = {
   frequency: number;
 };
 
-function removeAccents(str: string) {
-  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-}
-
 function orderByFrequency(a: TrieResult, b: TrieResult) {
   return b.frequency - a.frequency;
-}
-
-function cleanText(text: string) {
-  return text
-    .replace(/[\(\[\{<].*?[\)\]\}>]/g, "") // Remove words between brackets
-    .replace(/[^a-zA-Z0-9À-ỹ\s]/g, "") // Remove special characters but keep Vietnamese characters
-    .replace(/\b\S*[^a-zA-ZÀ-ỹ\s]+\S*\b/g, "") // Remove words with numbers or special characters
-    .replace(/\s+/g, " ") // Remove extra spaces
-    .trim(); // Remove leading and trailing spaces
 }
 
 class TrieNode {
@@ -84,7 +71,7 @@ class Trie {
     return results;
   }
 
-  fuzzySearch(query: string, maxDistance = 2) {
+  fuzzySearch(query: string, maxDistance = 1) {
     const results: Array<TrieResult> = [];
     this._traverse(this.root, "", query, maxDistance, results);
     return results;
@@ -106,7 +93,6 @@ class Trie {
         partialDistance += levenshtein(queryWords[i], currentWords[i]);
       }
 
-      // console.log(`Checking word: ${currentWord}, partial distance: ${partialDistance}`);
       if (partialDistance <= maxDistance && node.isEndOfWord) {
         results.push({
           originalWord: node.originalWord,
@@ -130,13 +116,21 @@ export class AutocompleteSearchTrie {
     this.trie.insert(word.toLowerCase());
   }
 
-  search(query: string, limit = 5) {
-    let result = this.trie.search(query.toLowerCase());
-    if (result.length === 0) {
-      // console.log("Fuzzy search");
-      result = this.trie.fuzzySearch(query.toLowerCase());
+  search({
+    query,
+    limit = 5,
+    isFuzzy = false,
+  }: {
+    query: string;
+    limit?: number;
+    isFuzzy?: boolean;
+  }) {
+    let results = this.trie.search(query.toLowerCase());
+    if (results.length < limit && isFuzzy) {
+      results = this.trie.fuzzySearch(query.toLowerCase());
     }
-    return result
+
+    return results
       .sort(orderByFrequency)
       .slice(0, limit) // from 0 to limit
       .map((r) => r.originalWord);
